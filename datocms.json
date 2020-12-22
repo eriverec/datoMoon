@@ -1,0 +1,10 @@
+{
+  "name": "Datocms Moon",
+  "description": "Simple Moon",
+  "datocmsProjectId": "39687",
+  "deploymentType": "static",
+  "buildCommand": "npm run generate",
+  "buildDirectory": "dist",
+  "datocmsApiTokenEnvName": "NUXT_ENV_DATOCMS_API_TOKEN",
+  "livePreviewUrl": ""
+}
