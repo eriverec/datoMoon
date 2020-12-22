@@ -1,6 +1,7 @@
 <template>
   <div>
     <section class="hero">
+      Hola
       <div class="hero-body">
         <div class="container">
           <div v-for="vestido in vestidos.slice(0, 2)" v-bind:key="vestido.slug">
