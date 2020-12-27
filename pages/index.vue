@@ -39,8 +39,8 @@
               </div>
             </div>
 
-            <div class="columns">
-              <div class="column is-8 is-offset-2">
+            <div class="">
+              <div class="">
                 <figure class="image">
                   <datocms-image :data="falda.imagen.responsiveImage" />
 
