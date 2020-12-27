@@ -19,10 +19,7 @@
       <div class="hero-body">
         <h1 class="title column is-8 is-offset-2">Últimas publicaciones</h1>
         <div class="container">
-          <div
-            v-for="falda in faldas.slice(0, 2)"
-            v-bind:key="falda.slug"
-          >
+          <div v-for="falda in faldas.slice(0, 2)" v-bind:key="falda.slug">
             <div class="columns">
               <div class="column is-8 is-offset-2">
                 <div class="content is-medium">
@@ -36,9 +33,7 @@
                   </h2>
                   <div class="tags has-addons">
                     <span class="tag"> <b>Categoria</b></span>
-                    <span class="tag is-primary">{{
-                      falda.categ.titulo
-                    }}</span>
+                    <span class="tag is-primary">{{ falda.categ.titulo }}</span>
                   </div>
                 </div>
               </div>
@@ -48,6 +43,7 @@
               <div class="column is-8 is-offset-2">
                 <figure class="image">
                   <datocms-image :data="falda.imagen.responsiveImage" />
+
                 </figure>
               </div>
             </div>
@@ -99,9 +95,7 @@
               <div class="hero-body">
                 <div class="column is-6 is-offset-3">
                   <figure class="image is-128x128  margin__auto">
-                    <img
-                      src="https://bulma.io/images/placeholders/128x128.png"
-                    />
+                    <img src="~/static/faldapng.png" />
                   </figure>
                   <div class="bd-index-buttons hero-buttons">
                     <nuxt-link
@@ -109,13 +103,6 @@
                       to="/faldas"
                     >
                       <span class="mr-4"><strong>Faldas</strong></span>
-
-                      <box-icon
-                        name="hand-right"
-                        type="solid"
-                        animation="tada"
-                        color="#fff"
-                      ></box-icon>
                     </nuxt-link>
                   </div>
                 </div>
@@ -140,13 +127,6 @@
                       to="https://bulma.io/documentation/columns/basics"
                     >
                       <span class="mr-4"><strong>Overoles</strong></span>
-
-                      <box-icon
-                        name="hand-right"
-                        type="solid"
-                        animation="tada"
-                        color="#fff"
-                      ></box-icon>
                     </nuxt-link>
                   </div>
                 </div>
@@ -183,11 +163,7 @@ export default {
             publicationDate: _firstPublishedAt
 
             imagen {
-              responsiveImage(imgixParams: {
-                #fit: crop, 
-                #ar: "16:9" 
-                 w: 860
-                }) {
+              responsiveImage{
                 ...imageFields
               }
             }
@@ -222,5 +198,9 @@ export default {
 <style scoped>
 .margin__auto {
   margin: auto;
+}
+
+.image{
+  text-align: center;
 }
 </style>
