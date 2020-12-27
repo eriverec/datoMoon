@@ -183,7 +183,7 @@ export default {
             publicationDate: _firstPublishedAt
 
             imagen {
-              responsiveImage(imgixParams: { fit: crop, ar: "16:9", w: 860 }) {
+              responsiveImage(imgixParams: {fit: crop, ar: "16:9" }) {
                 ...imageFields
               }
             }
