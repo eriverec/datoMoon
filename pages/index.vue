@@ -41,7 +41,7 @@
 
             <div class="">
               <div class="">
-                <figure class="image">
+                <figure class="">
                   <datocms-image :data="falda.imagen.responsiveImage" />
 
                 </figure>
