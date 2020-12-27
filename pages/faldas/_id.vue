@@ -5,7 +5,7 @@
         <div class="columns">
           <div class="column is-8 is-offset-2">
             <figure class="image">
-              <datocms-image :data="vestido.imagen.responsiveImage" />
+              <datocms-image :data="falda.imagen.responsiveImage" />
             </figure>
           </div>
         </div>
@@ -15,15 +15,15 @@
             <div class="column is-8 is-offset-2">
               <div class="content is-medium">
                 <h2 class="subtitle is-4">
-                  {{ formatDate(vestido.publicationDate) }}
+                  {{ formatDate(falda.publicationDate) }}
                 </h2>
                 <h1 class="title">
-                  <nuxt-link :to="`/vestidos/${vestido.slug}`">
-                    {{ vestido.titulo }}
+                  <nuxt-link :to="`/faldas/${falda.slug}`">
+                    {{ falda.titulo }}
                   </nuxt-link>
                 </h1>
-                <div v-html="vestido.contenido" />
-                <h2>{{ vestido.estado.titulo }}</h2>
+                <div v-html="falda.contenido" />
+                <h2>{{ falda.categ.titulo }}</h2>
               </div>
             </div>
           </div>
@@ -43,14 +43,14 @@ export default {
   async asyncData({ params }) {
     const data = await request({
       query: gql`
-        query BlogvestidoQuery($slug: String!) {
+        query BlogfaldaQuery($slug: String!) {
           site: _site {
             favicon: faviconMetaTags {
               ...seoMetaTagsFields
             }
           }
 
-          vestido(filter: { slug: { eq: $slug } }) {
+          falda(filter: { slug: { eq: $slug } }) {
             seo: _seoMetaTags {
               ...seoMetaTagsFields
             }
@@ -64,7 +64,7 @@ export default {
                 ...imageFields
               }
             }
-            estado {
+            categ {
               titulo
             }
           }
@@ -90,7 +90,7 @@ export default {
       return;
     }
 
-    return toHead(this.vestido.seo, this.site.favicon);
+    return toHead(this.falda.seo, this.site.favicon);
   }
 };
 </script>

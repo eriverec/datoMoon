@@ -4,7 +4,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'datoMoon',
+    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -16,11 +16,16 @@ export default {
     script: [{
       src: 'https://www.googletagmanager.com/gtag/js?id=UA-185988551-1',
       async: true
-    }],
+    },
+    {
+      src: 'https://unpkg.com/boxicons@latest/dist/boxicons.js'
+    }
+  ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    'boxicons/css/boxicons.min.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -41,6 +46,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics',
+    
   ],
 
   googleAnalytics: {
