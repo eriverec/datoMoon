@@ -147,7 +147,7 @@ export default {
 
             imagen {
               responsiveImage(
-                imgixParams: { fit: crop, w: 860, h: 500, auto: format }
+                imgixParams: { fit: crop, w: 860, ar: "16:9", auto: format }
               ) {
                 ...imageFields
                 srcSet
