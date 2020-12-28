@@ -147,18 +147,10 @@ export default {
 
             imagen {
               responsiveImage(
-                imgixParams: { fit: crop, w: 860, ar: "16:9", auto: format }
+                imgixParams: { fit: crop, w: 860, ar: "16:9" }
               ) {
                 ...imageFields
-                srcSet
-                webpSrcSet
-                sizes
-                src
-                width
-                aspectRatio
-                alt
-                title
-                base64
+              
               }
             }
             categ {
