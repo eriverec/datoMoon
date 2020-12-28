@@ -43,7 +43,7 @@
 
             <div class="columns">
               <div class="column is-8 is-offset-2">
-                <figure class="image">
+                <figure class="image" style="width:100%">
                   <datocms-image :data="falda.imagen.responsiveImage" />
                 </figure>
               </div>
@@ -195,7 +195,7 @@ export default {
 }
 
 .image {
-  /*text-align: center;*/
+  text-align: center;
 }
 
 .style_wrapper__1BeS5 {
