@@ -25,12 +25,14 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    'boxicons/css/boxicons.min.css'
+    'boxicons/css/boxicons.min.css',
+    'vuesax/dist/vuesax.css',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/datocms-image',
+    '@/plugins/vuesax',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -42,7 +44,7 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/bulma',
+    //'@nuxtjs/bulma',
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics',

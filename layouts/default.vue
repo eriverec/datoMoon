@@ -1,30 +1,9 @@
 <template>
   <div>
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-          <nuxt-link class="navbar-item" to="/">
-            <img src="~/static/bulma.png" alt="Logo" />
-          </nuxt-link>
-          <span class="navbar-burger burger" v-on:click="toggleNavbar">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        <div :class="['navbar-menu', navbarOpen && 'is-active']">
-          <div class="navbar-end">
-            <nuxt-link
-              class="navbar-item is-active is-size-5 has-text-weight-semibold"
-              to="/"
-            >
-              Home
-            </nuxt-link>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <Nuxt />
+    <Menu />
+    <div class="margin">
+      <Nuxt />
+    </div>
 
     <footer class="footer">
       <div class="content has-text-centered">
@@ -39,21 +18,6 @@
     </footer>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      navbarOpen: false
-    };
-  },
-  methods: {
-    toggleNavbar() {
-      this.navbarOpen = !this.navbarOpen;
-    }
-  }
-};
-</script>
 
 <style>
 html {
@@ -77,5 +41,15 @@ html {
 
 nav.navbar {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+.margin {
+  margin: 69px 119px;
+}
+
+@media (max-width: 600px) {
+  .margin {
+    margin: 70px 37px;
+  }
 }
 </style>

@@ -1,18 +1,52 @@
 <template>
   <div>
-    <section class="hero is-medium is-danger is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            ¡Bienvenida!
-          </h1>
-          <h2 class="subtitle">
-            CAVALI es una tienda basada en Ecuador que piensa en lo mejor para
-            ti, es por eso que solo vendemos productos de plata esterlina y
-            acero inoxidable. Shop with us! xoxo
-          </h2>
-        </div>
-      </div>
+    <vs-alert relief>
+      <template #title>
+        Vuesax Framework
+      </template>
+      Vuesax (pronounced / vjusacksː /, as view sacks) is a
+      <b>UI components framework</b> created with
+      <a href="https://vuejs.org/">Vuejs</a> to make projects easily and with a
+      Unique and pleasant style, Vuesax is created from scratch and designed for
+      all types of developed from the frontend lover to the backend that wants
+      to easily create your visual approach to the end user
+    </vs-alert>
+
+    <section class="section">
+    
+
+      <vs-card
+        type="3"
+        v-for="falda in faldas.slice(0, 2)"
+        v-bind:key="falda.slug"
+      >
+        <template #title>
+          <h3>
+            <nuxt-link :to="`/faldas/${falda.slug}`">{{
+              falda.titulo
+            }}</nuxt-link>
+          </h3>
+        </template>
+        <template #img>
+          <datocms-image :data="falda.imagen.responsiveImage" />
+        </template>
+        <template #text>
+          <p>
+            
+          </p>
+        </template>
+        <template #interactions>
+          <vs-button danger icon>
+            <i class="bx bx-heart"></i>
+          </vs-button>
+          <vs-button class="btn-chat" shadow primary>
+            <i class="bx bx-chat"></i>
+            <span class="span">
+              54
+            </span>
+          </vs-button>
+        </template>
+      </vs-card>
     </section>
 
     <section class="hero">
@@ -43,7 +77,6 @@
               <div class="column is-8 is-offset-2">
                 <figure class="image" style="width: 100%;">
                   <datocms-image :data="falda.imagen.responsiveImage" />
-
                 </figure>
               </div>
             </div>
@@ -84,58 +117,6 @@
         </div>
       </div>
     </section>
-
-    <!-- newsletter -->
-    <section class="section">
-      <h1 class="title column is-8 is-offset-1">Categorias destacadas</h1>
-      <div class="columns is-variable is-6 is-desktop">
-        <div class="column">
-          <div class="container has-text-centered is-fluid">
-            <div class="hero is-light">
-              <div class="hero-body">
-                <div class="column is-6 is-offset-3">
-                  <figure class="image is-128x128  margin__auto">
-                    <img src="~/static/faldapng.png" />
-                  </figure>
-                  <div class="bd-index-buttons hero-buttons">
-                    <nuxt-link
-                      class="button is-medium is-info is-rounded  "
-                      to="/faldas"
-                    >
-                      <span class="mr-4"><strong>Faldas</strong></span>
-                    </nuxt-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="container has-text-centered is-fluid">
-            <div class="hero is-light">
-              <div class="hero-body">
-                <div class="column is-6 is-offset-3">
-                  <figure class="image is-128x128  margin__auto">
-                    <img
-                      src="https://bulma.io/images/placeholders/128x128.png"
-                    />
-                  </figure>
-                  <div class="bd-index-buttons hero-buttons">
-                    <nuxt-link
-                      class="button is-medium is-info is-rounded "
-                      to="https://bulma.io/documentation/columns/basics"
-                    >
-                      <span class="mr-4"><strong>Overoles</strong></span>
-                    </nuxt-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
@@ -163,7 +144,7 @@ export default {
             publicationDate: _firstPublishedAt
 
             imagen {
-              responsiveImage{
+              responsiveImage(imgixParams: { fit: crop, ar: "16:9", w: 860 }) {
                 ...imageFields
               }
             }
@@ -200,8 +181,11 @@ export default {
   margin: auto;
 }
 
-.image{
+.image {
   text-align: center;
-  
+}
+
+section {
+  margin: 10px 0px;
 }
 </style>
