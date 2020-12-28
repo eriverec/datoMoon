@@ -17,6 +17,35 @@
       </div>
     </section>
 
+    <section class="section">
+      <div
+        class="style_wrapper__1BeS5 column is-8 is-offset-2"
+        v-for="falda in faldas.slice(0, 2)"
+        v-bind:key="falda.slug"
+      >
+        <nuxt-link :to="`/faldas/${falda.slug}`" class="style_root__3iCRH"
+          ><div class="style_rootInner__32CX1">
+            <div>
+              <div class="style_title__1jQC3">Start using DatoCMS today</div>
+              <datocms-image :data="falda.imagen.responsiveImage" />
+              <div class="style_subtitle__UtQrM">
+                According to Gartner 89% of companies plan to compete primarily
+                on the basis of customer experience this year. Don't get caught
+                unprepared.
+              </div>
+            </div>
+            <div class="style_action__32sxL">
+              <div class="style_root__2jAzX">
+                <div class="style_root__-6jDT style_fsBig__vL5g8">
+                  Try it for free!
+                </div>
+              </div>
+            </div>
+          </div></nuxt-link
+        >
+      </div>
+    </section>
+
     <section class="hero">
       <div class="hero-body">
         <div class="container">
@@ -65,8 +94,9 @@
         <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit
       </div>
     </section>
+
     <section class="section">
-      <h1 class="title column is-8 is-offset-2">Categorias destacadas</h1>  
+      <h1 class="title column is-8 is-offset-2">Categorias destacadas</h1>
       <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
         <a href="https://dashboard.datocms.com/signup" class="style_root__3iCRH"
           ><div class="style_rootInner__32CX1">
@@ -146,11 +176,8 @@ export default {
             publicationDate: _firstPublishedAt
 
             imagen {
-              responsiveImage(
-                imgixParams: { fit: crop, w: 860, ar: "16:9" }
-              ) {
+              responsiveImage {
                 ...imageFields
-              
               }
             }
             categ {
@@ -192,7 +219,7 @@ export default {
 
 .style_wrapper__1BeS5 {
   max-width: var(--page-width-with-margin);
-  
+
   padding-left: var(--page-margin);
   padding-right: var(--page-margin);
 }
@@ -229,6 +256,6 @@ export default {
 }
 
 .style_root__3iCRH:hover {
-    background-position: 50%;
+  background-position: 50%;
 }
 </style>
