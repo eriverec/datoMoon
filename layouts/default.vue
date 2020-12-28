@@ -1,9 +1,7 @@
 <template>
   <div>
-    <Menu />
-    <div class="margin">
-      <Nuxt />
-    </div>
+   <Menu />
+    <Nuxt />
 
     <footer class="footer">
       <div class="content has-text-centered">
@@ -18,6 +16,21 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      navbarOpen: false
+    };
+  },
+  methods: {
+    toggleNavbar() {
+      this.navbarOpen = !this.navbarOpen;
+    }
+  }
+};
+</script>
 
 <style>
 html {
@@ -41,15 +54,5 @@ html {
 
 nav.navbar {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
-}
-
-.margin {
-  margin: 69px 119px;
-}
-
-@media (max-width: 600px) {
-  .margin {
-    margin: 70px 37px;
-  }
 }
 </style>

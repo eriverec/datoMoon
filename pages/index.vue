@@ -1,52 +1,84 @@
 <template>
   <div>
-    <vs-alert relief>
-      <template #title>
-        Vuesax Framework
-      </template>
-      Vuesax (pronounced / vjusacksː /, as view sacks) is a
-      <b>UI components framework</b> created with
-      <a href="https://vuejs.org/">Vuejs</a> to make projects easily and with a
-      Unique and pleasant style, Vuesax is created from scratch and designed for
-      all types of developed from the frontend lover to the backend that wants
-      to easily create your visual approach to the end user
-    </vs-alert>
+ 
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Primary title
+          </h1>
+          <h2 class="subtitle">
+            <a href="https://vuejs.org/">Vuejs</a> to make projects easily and
+            with a Unique and pleasant style, Vuesax is created from scratch and
+            designed for all types of developed from the frontend lover to the
+            backend that wants to easily create your visual approach to the end
+            user
+          </h2>
+        </div>
+      </div>
+    </section>
 
     <section class="section">
-    
-
-      <vs-card
-        type="3"
-        v-for="falda in faldas.slice(0, 2)"
-        v-bind:key="falda.slug"
-      >
-        <template #title>
-          <h3>
-            <nuxt-link :to="`/faldas/${falda.slug}`">{{
-              falda.titulo
-            }}</nuxt-link>
-          </h3>
-        </template>
-        <template #img>
-          <datocms-image :data="falda.imagen.responsiveImage" />
-        </template>
-        <template #text>
-          <p>
-            
-          </p>
-        </template>
-        <template #interactions>
-          <vs-button danger icon>
-            <i class="bx bx-heart"></i>
-          </vs-button>
-          <vs-button class="btn-chat" shadow primary>
-            <i class="bx bx-chat"></i>
-            <span class="span">
-              54
-            </span>
-          </vs-button>
-        </template>
-      </vs-card>
+      <div class="columns is-multiline ">
+        <div
+          class="column is-8 is-offset-2"
+          v-for="falda in faldas.slice(0, 4)"
+          v-bind:key="falda.slug"
+        >
+          <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <datocms-image :data="falda.imagen.responsiveImage" />
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong
+                      ><nuxt-link :to="`/faldas/${falda.slug}`">{{
+                        falda.titulo
+                      }}</nuxt-link></strong
+                    >
+                    <small
+                      ><div class="tags has-addons">
+                        <span class="tag"> <b>Categoria</b></span>
+                        <span class="tag is-primary">{{
+                          falda.categ.titulo
+                        }}</span>
+                      </div></small
+                    >
+                    <small> {{ formatDate(falda.publicationDate) }}</small>
+                    <br />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenean efficitur sit amet massa fringilla egestas. Nullam
+                    condimentum luctus turpis.
+                  </p>
+                </div>
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item" aria-label="reply">
+                      <span class="icon is-small">
+                        <i class="fas fa-reply" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="level-item" aria-label="retweet">
+                      <span class="icon is-small">
+                        <i class="fas fa-retweet" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="level-item" aria-label="like">
+                      <span class="icon is-small">
+                        <i class="fas fa-heart" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="hero">
@@ -144,7 +176,7 @@ export default {
             publicationDate: _firstPublishedAt
 
             imagen {
-              responsiveImage(imgixParams: { fit: crop, ar: "16:9", w: 860 }) {
+              responsiveImage {
                 ...imageFields
               }
             }
@@ -183,9 +215,5 @@ export default {
 
 .image {
   text-align: center;
-}
-
-section {
-  margin: 10px 0px;
 }
 </style>
