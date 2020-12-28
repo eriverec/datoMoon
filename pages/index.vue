@@ -1,6 +1,5 @@
 <template>
   <div>
- 
     <section class="hero is-primary">
       <div class="hero-body">
         <div class="container">
@@ -19,10 +18,11 @@
     </section>
 
     <section class="section">
+      <h1 class="title column is-8 is-offset-2">Últimas publicaciones</h1>
       <div class="columns is-multiline ">
         <div
-          class="column is-8 is-offset-2"
-          v-for="falda in faldas.slice(0, 2)"
+          class="column"
+          v-for="falda in faldas.slice(0, 3)"
           v-bind:key="falda.slug"
         >
           <div class="box">
@@ -50,9 +50,6 @@
                     >
                     <small> {{ formatDate(falda.publicationDate) }}</small>
                     <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean efficitur sit amet massa fringilla egestas. Nullam
-                    condimentum luctus turpis.
                   </p>
                 </div>
                 <nav class="level is-mobile">
@@ -83,7 +80,6 @@
 
     <section class="hero">
       <div class="hero-body">
-        <h1 class="title column is-8 is-offset-2">Últimas publicaciones</h1>
         <div class="container">
           <div v-for="falda in faldas.slice(0, 2)" v-bind:key="falda.slug">
             <div class="columns">
@@ -116,6 +112,17 @@
             <div class="is-divider" />
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notification is-primary is-light">
+        <button class="delete"></button>
+        Primar lorem ipsum dolor sit amet, consectetur adipiscing elit lorem
+        ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis
+        placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+        fringilla. Nullam gravida purus diam, et dictum
+        <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit
       </div>
     </section>
 
@@ -176,7 +183,7 @@ export default {
             publicationDate: _firstPublishedAt
 
             imagen {
-              responsiveImage {
+              responsiveImage(imgixParams: { fit: crop, ar: "16:9", w: 860 }) {
                 ...imageFields
               }
             }
