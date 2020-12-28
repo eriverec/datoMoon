@@ -26,8 +26,14 @@
         <nuxt-link :to="`/faldas/${falda.slug}`" class="style_root__3iCRH"
           ><div class="style_rootInner__32CX1">
             <div>
-              <div class="style_title__1jQC3">Start using DatoCMS today</div>
+              <div class="style_title__1jQC3">{{ falda.titulo }}</div>
               <datocms-image :data="falda.imagen.responsiveImage" />
+              <div>
+                <div class="tags has-addons">
+                  <span class="tag"> <b>Categoria</b></span>
+                  <span class="tag is-primary">{{ falda.categ.titulo }}</span>
+                </div>
+              </div>
               <div class="style_subtitle__UtQrM">
                 According to Gartner 89% of companies plan to compete primarily
                 on the basis of customer experience this year. Don't get caught
@@ -176,7 +182,7 @@ export default {
             publicationDate: _firstPublishedAt
 
             imagen {
-              responsiveImage {
+              responsiveImage(imgixParams: { fit: crop, ar: "16:9", w: 860 }) {
                 ...imageFields
               }
             }
