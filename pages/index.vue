@@ -22,13 +22,13 @@
       <div class="columns is-multiline ">
         <div
           class="column is-8 is-offset-2"
-          v-for="falda in faldas.slice(0, 4)"
+          v-for="falda in faldas.slice(0, 2)"
           v-bind:key="falda.slug"
         >
           <div class="box">
             <article class="media">
               <div class="media-left">
-                <figure class="image is-64x64">
+                <figure class="image is-128x128">
                   <datocms-image :data="falda.imagen.responsiveImage" />
                 </figure>
               </div>

@@ -4,7 +4,7 @@
       <div class="container">
         <div class="columns">
           <div class="column is-8 is-offset-2">
-            <figure class="image">
+            <figure class="image is__slug">
               <datocms-image :data="falda.imagen.responsiveImage" />
             </figure>
           </div>
@@ -60,7 +60,7 @@ export default {
             publicationDate: _firstPublishedAt
             contenido
             imagen {
-              responsiveImage(imgixParams: { fit: crop, ar: "16:9", w: 860 }) {
+              responsiveImage {
                 ...imageFields
               }
             }
@@ -94,3 +94,13 @@ export default {
   }
 };
 </script>
+
+
+<style  scoped>
+.is__slug{
+width: 100%;
+    /* margin: auto; */
+    text-align: center;
+}
+
+</style>
