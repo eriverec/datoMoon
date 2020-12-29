@@ -1,19 +1,8 @@
 <template>
   <div>
-   <Menu />
+    <Menu />
     <Nuxt />
-
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Bulma - Blog theme</strong> by
-          <a href="https://gonzalojs.com">Gonzalo Gutierrez</a>. Based on the
-          <a href="http://jigsaw-blog-staging.tighten.co/">jigsaw-blog</a>. The
-          source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
-        </p>
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
 
@@ -34,8 +23,6 @@ export default {
 
 <style>
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -43,6 +30,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif !important;
 }
 
 *,

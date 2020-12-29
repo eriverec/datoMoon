@@ -1,113 +1,36 @@
 <template>
   <div>
-    <section class="hero is-primary">
+    <section class="hero is-link is-fullheight-with-navbar t__center">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">
-            Primary title
-          </h1>
-          <h2 class="subtitle">
-            <a href="https://vuejs.org/">Vuejs</a> to make projects easily and
-            with a Unique and pleasant style, Vuesax is created from scratch and
-            designed for all types of developed from the frontend lover to the
-            backend that wants to easily create your visual approach to the end
-            user
-          </h2>
+          <p class="title">
+            <b>¡Bienvenida!</b> <br />
+            CAVALI es una tienda basada en Ecuador que piensa en lo mejor para
+            ti, es por eso que solo vendemos productos de plata esterlina y
+            acero inoxidable. Shop with us! xoxo
+          </p>
         </div>
       </div>
     </section>
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
 
     <section class="section">
-      <div
-        class="style_wrapper__1BeS5 column is-8 is-offset-2"
-        v-for="falda in faldas.slice(0, 2)"
-        v-bind:key="falda.slug"
-      >
-        <nuxt-link :to="`/faldas/${falda.slug}`" class="style_root__3iCRH"
-          ><div class="style_rootInner__32CX1">
-            <div>
-              <div class="style_title__1jQC3">{{ falda.titulo }}</div>
-              <datocms-image :data="falda.imagen.responsiveImage" />
-              <div>
-                <div class="tags has-addons">
-                  <span class="tag"> <b>Categoria</b></span>
-                  <span class="tag is-primary">{{ falda.categ.titulo }}</span>
-                </div>
-              </div>
-              <div class="style_subtitle__UtQrM">
-                According to Gartner 89% of companies plan to compete primarily
-                on the basis of customer experience this year. Don't get caught
-                unprepared.
-              </div>
-            </div>
-            <div class="style_action__32sxL">
-              <div class="style_root__2jAzX">
-                <div class="style_root__-6jDT style_fsBig__vL5g8">
-                  Try it for free!
-                </div>
-              </div>
-            </div>
-          </div></nuxt-link
-        >
-      </div>
-    </section>
-
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title column is-8 is-offset-2">Últimas publicaciones</h1>
-          <div v-for="falda in faldas.slice(0, 2)" v-bind:key="falda.slug">
-            <div class="columns">
-              <div class="column is-8 is-offset-2">
-                <div class="content is-medium">
-                  <h1 class="title">
-                    <nuxt-link :to="`/faldas/${falda.slug}`">{{
-                      falda.titulo
-                    }}</nuxt-link>
-                  </h1>
-                  <h2 class="subtitle is-4">
-                    {{ formatDate(falda.publicationDate) }}
-                  </h2>
-                  <div class="tags has-addons">
-                    <span class="tag"> <b>Categoria</b></span>
-                    <span class="tag is-primary">{{ falda.categ.titulo }}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="columns">
-              <div class="column is-8 is-offset-2">
-                <figure class="image" style="width:100%">
-                  <datocms-image :data="falda.imagen.responsiveImage" />
-                </figure>
-              </div>
-            </div>
-
-            <div class="is-divider" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="notification is-primary is-light column is-8 is-offset-2">
-        <button class="delete"></button>
-        Primar lorem ipsum dolor sit amet, consectetur adipiscing elit lorem
-        ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis
-        placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
-        fringilla. Nullam gravida purus diam, et dictum
-        <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit
-      </div>
-    </section>
-
-    <section class="section">
-      <h1 class="title column is-8 is-offset-2">Categorias destacadas</h1>
       <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-        <a href="https://dashboard.datocms.com/signup" class="style_root__3iCRH"
-          ><div class="style_rootInner__32CX1">
+        <nuxt-link :to="`/faldas`" class="style_root__3iCRH">
+          <div class="style_rootInner__32CX1">
             <div>
-              <div class="style_title__1jQC3">Start using DatoCMS today</div>
+              <div class="style_title__1jQC3"><b>Sección Faldas</b></div>
               <div class="style_subtitle__UtQrM">
                 According to Gartner 89% of companies plan to compete primarily
                 on the basis of customer experience this year. Don't get caught
@@ -121,8 +44,32 @@
                 </div>
               </div>
             </div>
-          </div></a
-        >
+          </div>
+        </nuxt-link>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
+        <nuxt-link :to="`/faldas`" class="style_root__3iCRH">
+          <div class="style_rootInner__32CX1">
+            <div>
+              <div class="style_title__1jQC3"><b> Sección Overoles</b></div>
+              <div class="style_subtitle__UtQrM">
+                According to Gartner 89% of companies plan to compete primarily
+                on the basis of customer experience this year. Don't get caught
+                unprepared.
+              </div>
+            </div>
+            <div class="style_action__32sxL">
+              <div class="style_root__2jAzX">
+                <div class="style_root__-6jDT style_fsBig__vL5g8">
+                  Try it for free!
+                </div>
+              </div>
+            </div>
+          </div>
+        </nuxt-link>
       </div>
     </section>
     <!-- newsletter -->
@@ -151,6 +98,28 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mr-6 ml-6">
+      <h2 class="title t__center">Síguenos</h2>
+      <div class="columns ">
+        <div class="column  is-5 is-offset-1">
+          <a href="https://www.instagram.com/by.moonshop/" target="blank">
+          <div class="notification is-danger is-light t__custom">
+            <strong> INS</strong><br />
+            <strong> TA</strong><br />
+            <strong> GRAM</strong><br />
+          </div>
+          </a>
+        </div>
+        <div class="column is-5 is-offset-0">
+          <div class="notification is-info is-light t__custom">
+            <strong> fa</strong><br />
+            <strong> ce</strong><br />
+            <strong> book</strong><br />
           </div>
         </div>
       </div>
@@ -219,8 +188,15 @@ export default {
   margin: auto;
 }
 
-.image {
-  text-align: center;
+.section2 {
+  padding: 1rem 5.5rem;
+}
+
+.t__custom {
+  text-transform: uppercase;
+  font-size: 40px;
+  text-align: left;
+  box-shadow: 0 2px 40px 0 rgba(23, 41, 64, 0.05), 0 5px 10px 0 rgba(23, 41, 64, 0.1);
 }
 
 .style_wrapper__1BeS5 {
@@ -235,7 +211,6 @@ export default {
   padding: calc(22.4px + 4.8vw);
   background: #fff;
   border-radius: 5px;
-  box-shadow: var(--box-shadow);
   box-shadow: 0 2px 40px 0 rgba(23, 41, 64, 0.05),
     0 5px 10px 0 rgba(23, 41, 64, 0.1);
 
@@ -244,7 +219,7 @@ export default {
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
   background: linear-gradient(-30deg, #faedff 30%, #e9fcff 45%, #fff 60%);
-  background-position: 0 0;
+  background-position: 50%;
   background-size: 200vw 100%;
 }
 
@@ -262,6 +237,6 @@ export default {
 }
 
 .style_root__3iCRH:hover {
-  background-position: 50%;
+  background-position: 30%;
 }
 </style>
