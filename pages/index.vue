@@ -45,7 +45,7 @@
 
     <section class="section">
       <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-        <nuxt-link :to="`/faldas`" class="style_root__3iCRH overol__imagen">
+        <nuxt-link :to="`/overoles`" class="style_root__3iCRH overol__imagen">
           <div class="style_rootInner__32CX1">
             <div>
               <div class="style_title__1jQC3"><b> Sección Overoles</b></div>
