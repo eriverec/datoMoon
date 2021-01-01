@@ -5,9 +5,7 @@
         <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
           <ul>
             <li>
-              <NLink to="/">
-                <b-icon icon="chevron-left" size="is-medium" /> Home
-              </NLink>
+              <NLink to="/"> Home </NLink>
             </li>
             <li
               v-for="(crumb, index) in crumbs"
@@ -28,84 +26,29 @@
         </nav>
       </div>
 
-      <div class="columns is-multiline ">
+      <div class="columns is-multiline">
         <div
-          class="column"
-          v-for="falda in faldas.slice(0, 3)"
-          v-bind:key="falda.slug"
-        >
-          <div class="box">
-            <article class="media">
-              <div class="media-left">
-                <figure class="image is-128x128">
-                  <datocms-image :data="falda.imagen.responsiveImage" />
-                </figure>
-              </div>
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong
-                      ><nuxt-link :to="`/faldas/${falda.slug}`">{{
-                        falda.titulo
-                      }}</nuxt-link></strong
-                    >
-                    <small
-                      ><div class="tags has-addons">
-                        <span class="tag"> <b>Categoria</b></span>
-                        <span class="tag is-primary">{{
-                          falda.categ.titulo
-                        }}</span>
-                      </div></small
-                    >
-                    <small> {{ formatDate(falda.publicationDate) }}</small>
-                    <br />
-                  </p>
-                </div>
-                <nav class="level is-mobile">
-                  <div class="level-left">
-                    <a class="level-item" aria-label="reply">
-                      <span class="icon is-small">
-                        <i class="fas fa-reply" aria-hidden="true"></i>
-                      </span>
-                    </a>
-                    <a class="level-item" aria-label="retweet">
-                      <span class="icon is-small">
-                        <i class="fas fa-retweet" aria-hidden="true"></i>
-                      </span>
-                    </a>
-                    <a class="level-item" aria-label="like">
-                      <span class="icon is-small">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                      </span>
-                    </a>
-                  </div>
-                </nav>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns is-desktop is-multiline ">
-        <div
-          class="column  is-half-desktop"
+          class="column is-half-tablet is-one-third-desktop is-one-quarter-fullhd"
           v-for="falda in faldas"
           v-bind:key="falda.slug"
         >
-          <a
+          <nuxt-link
+            :to="`/faldas/${falda.slug}`"
             class="listing-item-container compact"
             data-marker-id="296296"
-            href="/detail/296296"
             ><div class="listing-item">
-              <datocms-image :data="falda.imagen.responsiveImage" class="img__sec" />
-              <div class="listing-badge now-open">Now Open</div>
+              <datocms-image
+                :data="falda.imagen.responsiveImage"
+                class="img__sec"
+              />
+              <div class="listing-badge now-open">{{ falda.categ.titulo }}</div>
               <div class="listing-item-content">
                 <div class="numerical-rating mid" data-rating="3"></div>
-                <h3>Think Coffee</h3>
-                <span>215 Terry Lane, New York</span>
+                <h3>{{ falda.titulo }}</h3>
+                <span>{{ formatDate(falda.publicationDate) }}</span>
               </div>
               <span class="like-icon"></span></div
-          ></a>
+          ></nuxt-link>
         </div>
       </div>
     </section>
@@ -160,7 +103,7 @@ export default {
             }
           }
 
-          faldas: allFaldas(first: 4, orderBy: _firstPublishedAt_DESC) {
+          faldas: allFaldas(orderBy: _firstPublishedAt_DESC) {
             id
             titulo
             slug
@@ -198,5 +141,3 @@ export default {
   }
 };
 </script>
-
-

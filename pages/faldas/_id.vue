@@ -5,9 +5,7 @@
         <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
           <ul>
             <li>
-              <NLink to="/">
-                <b-icon icon="chevron-left" size="is-medium" /> Home
-              </NLink>
+              <NLink to="/">Home </NLink>
             </li>
             <li
               v-for="(crumb, index) in crumbs"
@@ -57,10 +55,6 @@
           </section>
         </div>
       </div>
-
-
-
-      
     </section>
   </div>
 </template>
@@ -158,6 +152,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
