@@ -1,7 +1,33 @@
 <template>
   <div>
-    <section class="section">
-      <h1 class="title column is-8 is-offset-2">Últimas publicaciones</h1>
+    <section class="section mt-6">
+      <div class="title column is-8 is-offset-2">
+        <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+          <ul>
+            <li>
+              <NLink to="/">
+                <b-icon icon="chevron-left" size="is-medium" /> Home
+              </NLink>
+            </li>
+            <li
+              v-for="(crumb, index) in crumbs"
+              :key="index"
+              property="itemListElement"
+              typeof="ListItem"
+            >
+              <NLink property="item" typeof="WebPage" :to="crumb.path">
+                <span property="name">{{
+                  $route.fullPath === crumb.path && title !== null
+                    ? title
+                    : crumb.title
+                }}</span>
+              </NLink>
+              <meta property="position" :content="index + 2" />
+            </li>
+          </ul>
+        </nav>
+      </div>
+
       <div class="columns is-multiline ">
         <div
           class="column"
@@ -59,6 +85,29 @@
           </div>
         </div>
       </div>
+
+      <div class="columns is-desktop is-multiline ">
+        <div
+          class="column  is-half-desktop"
+          v-for="falda in faldas"
+          v-bind:key="falda.slug"
+        >
+          <a
+            class="listing-item-container compact"
+            data-marker-id="296296"
+            href="/detail/296296"
+            ><div class="listing-item">
+              <datocms-image :data="falda.imagen.responsiveImage" class="img__sec" />
+              <div class="listing-badge now-open">Now Open</div>
+              <div class="listing-item-content">
+                <div class="numerical-rating mid" data-rating="3"></div>
+                <h3>Think Coffee</h3>
+                <span>215 Terry Lane, New York</span>
+              </div>
+              <span class="like-icon"></span></div
+          ></a>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -69,7 +118,38 @@ import { toHead } from "vue-datocms";
 import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
 
+const titleCase = require("ap-style-title-case");
+
 export default {
+  props: {
+    title: {
+      type: String,
+      default: null
+    }
+  },
+
+  computed: {
+    crumbs() {
+      const fullPath = this.$route.fullPath;
+      const params = fullPath.startsWith("/")
+        ? fullPath.substring(1).split("/")
+        : fullPath.split("/");
+      const crumbs = [];
+      let path = "";
+      params.forEach((param, index) => {
+        path = `${path}/${param}`;
+        const match = this.$router.match(path);
+        if (match.name !== null) {
+          crumbs.push({
+            title: titleCase(param.replace(/-/g, " ")),
+            ...match
+          });
+        }
+      });
+      return crumbs;
+    }
+  },
+
   async asyncData({ params }) {
     const data = await request({
       query: gql`
@@ -80,14 +160,14 @@ export default {
             }
           }
 
-          faldas: allFaldas(first: 2, orderBy: _firstPublishedAt_DESC) {
+          faldas: allFaldas(first: 4, orderBy: _firstPublishedAt_DESC) {
             id
             titulo
             slug
             publicationDate: _firstPublishedAt
 
             imagen {
-              responsiveImage(imgixParams: { fit: crop, ar: "16:9", w: 860 }) {
+              responsiveImage(imgixParams: { fit: crop, w: 860 }) {
                 ...imageFields
               }
             }
@@ -118,3 +198,5 @@ export default {
   }
 };
 </script>
+
+

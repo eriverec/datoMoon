@@ -1,9 +1,9 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar is-fixed-top animate__animated animate__fadeIn">
     <div class="container">
       <div class="navbar-brand">
         <nuxt-link class="navbar-item" to="/">
-          <img src="/bulma.png" alt="Logo" />
+          <img src="/moonlogo.png" alt="Logo" />
         </nuxt-link>
         <span class="navbar-burger burger" v-on:click="toggleNavbar">
           <span></span>

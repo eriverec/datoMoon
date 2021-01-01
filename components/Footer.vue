@@ -1,5 +1,5 @@
 <template>
-     <footer class="footer mt-5">
+     <footer class="footer mt-5 is-dark">
       <div class="content has-text-centered">
         <p>
           by

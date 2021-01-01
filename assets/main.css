@@ -1,4 +1,36 @@
 /*EFECTO DEL HOME*/
+
+.hero__imagen {
+  background-image: url("~static/home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+
+
+.img__sec{
+  position: revert !important;
+}
+
+.is__slug {
+  width: 100%;
+  /* margin: auto; */
+  text-align: center;
+}
+
+.breadcrumb li a {
+  color: black;
+}
+.breadcrumb li a.nuxt-link-exact-active.nuxt-link-active {
+  color: grey;
+}
+
+.blanco{
+  background: white;
+  border-radius: 6px;
+    padding: 4px 19px;
+}
+
 .circles {
   position: absolute;
   top: 0;
@@ -108,13 +140,197 @@
   }
 }
 
-
-
-.section{
+.section {
   padding: 1rem 1.5rem;
 }
 
-
-.t__center{
+.t__center {
   text-align: center;
 }
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(5px);
+}
+
+.intro__2 {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1.125;
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 600px){
+  .intro__2 {
+    font-size: 3rem;
+  }
+}
+
+
+
+/*TERCEROS*/
+
+.fs-container .fs-listings, .fs-switcher {
+  padding: 0 25px;
+  margin: 0;
+}
+
+.fs-content .listing-item-container, section.fullwidth .listing-item-container {
+  box-shadow: 0 0 8px 0 rgba(0,0,0,.08);
+  background-color: #fff;
+  background: #fff;
+}
+
+.listing-item-container {
+  background-color: #f6f6f6;
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transform: translateZ(0);
+  transition: transform .3s;
+  margin-bottom: 30px;
+}
+
+.listing-item-container.compact .listing-item {
+  border-radius: 4px;
+}
+
+.listing-item {
+  overflow: hidden;
+}
+
+.listing-item {
+  background: #ccc;
+  border-radius: 4px 4px 0 0;
+  height: 100%;
+  display: block;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 265px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.listing-item:before {
+  content: "";
+  top: 0;
+  position: absolute;
+  z-index: 9;
+  background: linear-gradient(0deg,rgba(35,35,37,.9) 0,rgba(35,35,37,.45) 35%,rgba(22,22,23,0) 60%,transparent);
+  background-color: rgba(35,35,37,.2);
+  opacity: 1;
+}
+
+.listing-item:before, .listing-item img {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+.listing-item img {
+  object-fit: cover;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}
+
+.listing-badge.now-open {
+  background-color: #54ba1d;
+}
+
+.listing-badge {
+  background-color: #333;
+  float: left;
+  position: absolute;
+  transform: rotate(45deg);
+  right: -64px;
+  top: 22px;
+  text-align: center;
+  width: 200px;
+  font-size: 12.5px;
+  margin: 0;
+  z-index: 999;
+  color: #fff;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.listing-item-content {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  padding: 0 90px 0 32px;
+  width: 100%;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+span.like-icon {
+  color: #fff;
+  font-size: 19px;
+  position: absolute;
+  z-index: 101;
+  right: 30px;
+  bottom: 30px;
+  cursor: normal;
+  background-color: rgba(24,24,24,.4);
+  display: block;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  transition: all .4s;
+}
+
+.listing-item-container:hover {
+  transform: translate3d(0,-6px,0);
+}
+
+.numerical-rating.mid {
+  background-color: #c0c52a;
+}
+
+.compact .numerical-rating {
+  margin: 0 0 8px;
+}
+
+.numerical-rating {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 26px;
+  height: 26px;
+  width: 44px;
+  display: inline-block;
+  font-family: open sans;
+  position: relative;
+  border-radius: 50px;
+  letter-spacing: -.5px;
+  background-color: hsla(0,0%,100%,.2);
+  margin: 15px 32px;
+}
+
+.numerical-rating:before {
+  content: attr(data-rating);
+}
+.listing-item-content h3 {
+  color: #fff;
+  font-size: 20px;
+  bottom: -1px;
+  position: relative;
+  font-weight: 500;
+  margin: 0;
+  line-height: 31px;
+}
+.listing-item-content span {
+  font-size: 16px;
+  font-weight: 300;
+  display: inline-block;
+  color: hsla(0,0%,100%,.7);
+}
+
+

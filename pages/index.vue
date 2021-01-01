@@ -1,30 +1,28 @@
 <template>
   <div>
-    <section class="hero is-link is-fullheight-with-navbar t__center">
+    <section class="hero is-fullheight-with-navbar t__center hero__imagen">
       <div class="hero-body">
         <div class="container">
-          <p class="title">
-            <b>¡Bienvenida!</b> <br />
-            CAVALI es una tienda basada en Ecuador que piensa en lo mejor para
-            ti, es por eso que solo vendemos productos de plata esterlina y
-            acero inoxidable. Shop with us! xoxo
+          <p class="intro__2 animate__animated animate__fadeInDown">
+            <b class="blanco ">elige</b> <br />
+             <b class="blanco">tu</b> <br/>
+             <b class="blanco">diseño</b> 
           </p>
+          
         </div>
       </div>
     </section>
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
 
+
+<section class="section">
+    <div class="notification is-primary column is-8 is-offset-2">
+   
+      <b>¡Bienvenida!</b> <br />
+            CAVALI es una tienda basada en Ecuador que piensa en lo mejor para
+            ti, es por eso que solo vendemos productos de plata esterlina y
+            acero inoxidable. Shop with us! xoxo
+    </div>
+</section>
     <section class="section">
       <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
         <nuxt-link :to="`/faldas`" class="style_root__3iCRH">
@@ -108,11 +106,11 @@
       <div class="columns ">
         <div class="column  is-5 is-offset-1">
           <a href="https://www.instagram.com/by.moonshop/" target="blank">
-          <div class="notification is-danger is-light t__custom">
-            <strong> INS</strong><br />
-            <strong> TA</strong><br />
-            <strong> GRAM</strong><br />
-          </div>
+            <div class="notification is-danger is-light t__custom">
+              <strong> INS</strong><br />
+              <strong> TA</strong><br />
+              <strong> GRAM</strong><br />
+            </div>
           </a>
         </div>
         <div class="column is-5 is-offset-0">
@@ -196,7 +194,8 @@ export default {
   text-transform: uppercase;
   font-size: 40px;
   text-align: left;
-  box-shadow: 0 2px 40px 0 rgba(23, 41, 64, 0.05), 0 5px 10px 0 rgba(23, 41, 64, 0.1);
+  box-shadow: 0 2px 40px 0 rgba(23, 41, 64, 0.05),
+    0 5px 10px 0 rgba(23, 41, 64, 0.1);
 }
 
 .style_wrapper__1BeS5 {
@@ -239,4 +238,7 @@ export default {
 .style_root__3iCRH:hover {
   background-position: 30%;
 }
+
+
+
 </style>
