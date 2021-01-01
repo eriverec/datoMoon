@@ -1,31 +1,8 @@
 <template>
   <div>
-    <section class="hero section mt-6">
-      <div class="title column is-8 is-offset-2">
-        <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
-          <ul>
-            <li>
-              <NLink to="/">Home </NLink>
-            </li>
-            <li
-              v-for="(crumb, index) in crumbs"
-              :key="index"
-              property="itemListElement"
-              typeof="ListItem"
-            >
-              <NLink property="item" typeof="WebPage" :to="crumb.path">
-                <span property="name">{{
-                  $route.fullPath === crumb.path && title !== null
-                    ? title
-                    : crumb.title
-                }}</span>
-              </NLink>
-              <meta property="position" :content="index + 2" />
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="hero-body">
+    <section class=" section mt-6">
+      <Breadcrumb/>
+      <div class="">
         <div class="container">
           <div class="columns">
             <div class="column is-8 is-offset-2">
@@ -43,9 +20,9 @@
                     {{ formatDate(falda.publicationDate) }}
                   </h2>
                   <h1 class="title">
-                    <nuxt-link :to="`/faldas/${falda.slug}`">
+                    
                       {{ falda.titulo }}
-                    </nuxt-link>
+                    
                   </h1>
                   <div v-html="falda.contenido" />
                   <h2>{{ falda.categ.titulo }}</h2>

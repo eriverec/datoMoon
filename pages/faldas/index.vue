@@ -1,30 +1,7 @@
 <template>
   <div>
     <section class="section mt-6">
-      <div class="title column is-8 is-offset-2">
-        <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
-          <ul>
-            <li>
-              <NLink to="/"> Home </NLink>
-            </li>
-            <li
-              v-for="(crumb, index) in crumbs"
-              :key="index"
-              property="itemListElement"
-              typeof="ListItem"
-            >
-              <NLink property="item" typeof="WebPage" :to="crumb.path">
-                <span property="name">{{
-                  $route.fullPath === crumb.path && title !== null
-                    ? title
-                    : crumb.title
-                }}</span>
-              </NLink>
-              <meta property="position" :content="index + 2" />
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Breadcrumb/>
 
       <div class="columns is-multiline">
         <div

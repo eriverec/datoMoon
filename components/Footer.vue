@@ -1,13 +1,12 @@
 <template>
      <footer class="footer mt-5 is-dark">
       <div class="content has-text-centered">
-        <p>
-          by
-          <a href="https://gonzalojs.com">Gonzalo Gutierrez</a>. Based on the
-          <a href="http://jigsaw-blog-staging.tighten.co/">jigsaw-blog</a>. The
-          source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+        <p>          
+          ©  2021 MoonShop. All rights reserved. Developed by Eri Vera.
         </p>
+        <img class="logo__footer" src="/moonlogo.png" alt="Logo Footer" /> 
+        <br/> 
+        ❤️
       </div>
     </footer>
 </template>
@@ -16,5 +15,9 @@
 .footer{
   background-color: #172940;
   color: white; 
+}
+.logo__footer{
+  max-height: 1.75rem;
+  filter: invert(1);
 }
 </style>
