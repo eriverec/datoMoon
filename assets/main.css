@@ -1,10 +1,11 @@
 /*EFECTO DEL HOME*/
 
 .hero__imagen {
-  background-image: url("~static/medialuna2.jpg");
+  background-image: url("~static/th.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
+  background-position-y: center;
 }
 
 .img__whatsapp {
@@ -473,4 +474,16 @@ span.like-icon {
   .navbar-menu {
     background-color: transparent;
   }
+}
+
+
+.page__not{
+  font-size: 4rem;
+  text-align: center;
+  color: lightcoral;
+  text-transform: uppercase;
+}
+
+.page__not h1{
+  font-weight: 800;
 }

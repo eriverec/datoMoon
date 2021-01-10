@@ -20,7 +20,7 @@
                     {{ falda.titulo }}
                   </h1>
                   <h2>{{ falda.categ.titulo }}</h2>
-                  <div v-html="$md.render(falda.contenido)"></div>
+                  <div class="centenido__center" v-html="$md.render(falda.contenido)"></div>
 
              
 
@@ -128,4 +128,3 @@ export default {
 };
 </script>
 
-<style scoped></style>

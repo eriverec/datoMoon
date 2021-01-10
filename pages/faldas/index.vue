@@ -128,12 +128,19 @@ export default {
       return format(parseISO(date), "PPP");
     }
   },
-  head() {
+ /* head() {
     if (!this.ready) {
       return;
+      
     }
 
     return toHead(this.site.favicon);
-  }
+  },*/
+  head() {
+    return {
+      title: "Faldas",
+      titleTemplate: "%s - Moon",
+    };
+  },
 };
 </script>

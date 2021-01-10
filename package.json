@@ -1,6 +1,8 @@
 {
   "name": "datoMoon",
   "version": "1.0.0",
+  "description": "Tienda de ropas",
+  "author": "Eri Vera",
   "private": true,
   "scripts": {
     "dev": "nuxt",

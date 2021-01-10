@@ -3,12 +3,11 @@
     <section class="hero is-fullheight-with-navbar t__center hero__imagen">
       <div class="hero-body">
         <div class="container">
-          <div class="intro__2 animate__animated animate__fadeIn">
-            <b class="blanco ">tienda de ropas</b> <br />
-            <b class="blanco">para damas</b>
+          <div class="intro__2 ">
+            <b class="blanco animate__animated animate__fadeIn">tienda de ropas</b> <br />
+            <b class="blanco animate__animated animate__fadeIn">para damas</b>
             <br />
-
-            <b class="blanco2"> Elige tu Diseño</b>
+            <b class="blanco2 animate__animated animate__fadeIn"> Elige tu Diseño</b>
           </div>
         </div>
       </div>
