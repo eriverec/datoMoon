@@ -1,12 +1,14 @@
 /*EFECTO DEL HOME*/
 
 .hero__imagen {
-  background-image: url("~static/th2.webp");
+  background-image: url("~static/the-des.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
 }
+
+
 
 .img__whatsapp {
   filter: invert(1);
@@ -289,6 +291,9 @@
   }
   .breadcrumb {
     display: block;
+  }
+  .hero__imagen{
+    background-image: url("~static/the.jpg");
   }
 }
 
