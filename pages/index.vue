@@ -3,33 +3,24 @@
     <section class="hero is-fullheight-with-navbar t__center hero__imagen">
       <div class="hero-body">
         <div class="container">
-          <p class="intro__2 animate__animated animate__fadeIn">
-            <b class="blanco ">elige</b> <br />
-             <b class="blanco">tu</b> <br/>
-             <b class="blanco">diseño</b> 
-          </p>
-          
+          <div class="intro__2 animate__animated animate__fadeIn">
+            <b class="blanco ">tienda de ropas</b> <br />
+            <b class="blanco">para damas</b>
+            <br />
+
+            <b class="blanco2"> Elige tu Diseño</b>
+          </div>
         </div>
       </div>
     </section>
 
-
-<section class="section">
-    <div class="notification is-primary column is-8 is-offset-2">
-   
-      <b>¡Bienvenida!</b> <br />
-            CAVALI es una tienda basada en Ecuador que piensa en lo mejor para
-            ti, es por eso que solo vendemos productos de plata esterlina y
-            acero inoxidable. Shop with us! xoxo
-    </div>
-</section>
+  
     <section class="section">
       <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
         <nuxt-link :to="`/faldas`" class="style_root__3iCRH falda__imagen">
           <div class="style_rootInner__32CX1">
             <div>
               <div class="style_title__1jQC3"><b>Sección Faldas</b></div>
-             
             </div>
             <div class="style_action__32sxL">
               <div class="style_root__2jAzX">
@@ -45,16 +36,15 @@
 
     <section class="section">
       <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
-        <nuxt-link :to="`/overoles`" class="style_root__3iCRH overol__imagen">
+        <nuxt-link :to="`/`" class="style_root__3iCRH overol__imagen">
           <div class="style_rootInner__32CX1">
             <div>
               <div class="style_title__1jQC3"><b> Sección Overoles</b></div>
-             
             </div>
             <div class="style_action__32sxL">
               <div class="style_root__2jAzX">
                 <div class="button is-info is-light">
-                  Click para entrar!
+                  No disponible
                 </div>
               </div>
             </div>
@@ -67,14 +57,18 @@
       <div class="columns">
         <div class="column column is-8 is-offset-2 ">
           <div class=" has-text-centered is-fluid">
-            <div class="hero is-light " >
+            <div class="hero is-light ">
               <div class="hero-body">
-                <h2 class="title is-4">Entrega a domicilio </h2>
+                <h2 class="title is-4">Entrega a domicilio</h2>
                 <div class="">
                   <div class="field has-addons has-addons-centered">
                     Solo para Guayaquil
                   </div>
-                  <img class="logo__footer" src="/fast-delivery.png" alt="Logo Footer" /> 
+                  <img
+                    class="logo__footer"
+                    src="/fast-delivery.png"
+                    alt="Logo Footer"
+                  />
                 </div>
               </div>
             </div>
@@ -87,14 +81,20 @@
       <h2 class="title t__center">Escríbenos</h2>
       <div class="columns ">
         <div class="column bloque__whatsaap">
-          <a href="https://api.whatsapp.com/send?phone=593986543945&text=Hola,%20quiero%20un%20pedido!" target="blank" class="whatsapp__imagen">
+          <a
+            href="https://api.whatsapp.com/send?phone=593986543945&text=Hola,%20quiero%20un%20pedido!"
+            target="blank"
+            class="whatsapp__imagen"
+          >
             <div class="notification is-success t__custom">
-              <img class="img__whatsapp" src="~static/whatsapp-logo-132.png"/><br />
+              <img
+                class="img__whatsapp"
+                src="~static/whatsapp-logo-132.png"
+              /><br />
               <strong> whatsapp</strong>
             </div>
           </a>
         </div>
-        
       </div>
     </section>
   </div>
@@ -164,9 +164,4 @@ export default {
 .section2 {
   padding: 1rem 5.5rem;
 }
-
-
-
-
-
 </style>

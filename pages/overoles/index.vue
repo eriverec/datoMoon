@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="section mt-6">
-      <Breadcrumb/>
+      <Breadcrumb />
 
       <div class="columns is-multiline">
         <div
@@ -18,19 +18,26 @@
                 :data="overol.imagen.responsiveImage"
                 class="img__sec"
               />
-              <div class="listing-badge now-open">{{ overol.categ.titulo }}</div>
+              <div class="listing-badge now-open">
+                {{ overol.categ.titulo }}
+              </div>
               <div class="listing-item-content">
-
-                <div class="tag is-success" v-if="overol.stock.titulo === 'Disponible'">{{ overol.stock.titulo }}</div>
-                <div class="tag is-danger" v-else>{{ overol.stock.titulo }}</div>
-
-
+                <div
+                  class="tag is-success"
+                  v-if="overol.stock.titulo === 'Disponible'"
+                >
+                  {{ overol.stock.titulo }}
+                </div>
+                <div class="tag is-danger" v-else>
+                  {{ overol.stock.titulo }}
+                </div>
 
                 <h3>{{ overol.titulo }}</h3>
                 <span>{{ formatDate(overol.publicationDate) }}</span>
               </div>
-              <span class="like-icon"></span></div
-          ></nuxt-link>
+              <!-- <span class="like-icon"></span>-->
+            </div>
+          </nuxt-link>
         </div>
       </div>
     </section>
@@ -100,7 +107,7 @@ export default {
               titulo
             }
 
-            stock{
+            stock {
               titulo
             }
           }

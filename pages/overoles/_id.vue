@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class=" section mt-6">
-      <Breadcrumb/>
+      <Breadcrumb />
       <div class="">
         <div class="container">
           <div class="columns">
@@ -19,12 +19,9 @@
                   <h2 class="subtitle is-4">
                     {{ formatDate(overol.publicationDate) }}
                   </h2>
-                  <h1 class="title">
-                    
-                      {{ overol.titulo }}
-                    
-                  </h1>
+                  <h1 class="title">{{ overol.titulo }}</h1>
                   <div v-html="overol.contenido" />
+
                   <h2>{{ overol.categ.titulo }}</h2>
                 </div>
               </div>
@@ -101,7 +98,7 @@ export default {
             categ {
               titulo
             }
-            stock{
+            stock {
               titulo
             }
           }

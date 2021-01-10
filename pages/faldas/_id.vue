@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class=" section mt-6">
-      <Breadcrumb/>
+      <Breadcrumb />
       <div class="">
         <div class="container">
           <div class="columns">
@@ -16,16 +16,14 @@
             <div class="columns">
               <div class="column is-8 is-offset-2">
                 <div class="content is-medium">
-                  <h2 class="subtitle is-4">
-                    {{ formatDate(falda.publicationDate) }}
-                  </h2>
                   <h1 class="title">
-                    
-                      {{ falda.titulo }}
-                    
+                    {{ falda.titulo }}
                   </h1>
-                  <div v-html="falda.contenido" />
                   <h2>{{ falda.categ.titulo }}</h2>
+                  <div v-html="$md.render(falda.contenido)"></div>
+
+             
+
                 </div>
               </div>
             </div>
@@ -101,6 +99,7 @@ export default {
             categ {
               titulo
             }
+            
           }
         }
 

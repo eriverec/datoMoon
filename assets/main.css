@@ -1,7 +1,7 @@
 /*EFECTO DEL HOME*/
 
 .hero__imagen {
-  background-image: url("~static/home.jpg");
+  background-image: url("~static/medialuna2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
@@ -16,9 +16,6 @@
   display: flex;
   justify-content: center;
 }
-
-
-
 
 .t__custom {
   text-transform: uppercase;
@@ -85,6 +82,7 @@
 }
 .style_root__3iCRH.overol__imagen {
   background-image: url("~static/sec-ove.jpg");
+  filter: grayscale(1);
 }
 
 .img__sec {
@@ -106,9 +104,10 @@
   white-space: nowrap;
   margin: auto;
   justify-content: center;
- 
+
   padding: 20px;
-  box-shadow: 0 2px 40px 0 rgba(23, 41, 64, 0.05), 0 5px 10px 0 rgba(23, 41, 64, 0.1);
+  box-shadow: 0 2px 40px 0 rgba(23, 41, 64, 0.05),
+    0 5px 10px 0 rgba(23, 41, 64, 0.1);
   border-radius: 5px;
 
   font-size: 1rem;
@@ -116,29 +115,22 @@
   line-height: 1.125;
 }
 
-
 .breadcrumb li a {
   color: #363636;
 }
 .breadcrumb li a.nuxt-link-exact-active.nuxt-link-active {
   color: #50c5af;
 }
-.breadcrumb a:hover{
+.breadcrumb a:hover {
   color: #50c5af;
 }
 
-.breadcrumb ul, .breadcrumb ol{
+.breadcrumb ul,
+.breadcrumb ol {
   flex-wrap: initial;
 }
 
-
 /*breadcrumb- fin*/
-
-.blanco {
-  background: white;
-  border-radius: 6px;
-  padding: 4px 19px;
-}
 
 .circles {
   position: absolute;
@@ -263,17 +255,38 @@
 }
 
 .intro__2 {
-  font-size: 5rem;
+  text-align: left;
+  color: white;
+}
+.intro__2 .blanco {
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1.125;
   text-transform: uppercase;
 }
 
+.intro__2 .blanco2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+
+.blanco {
+  /*background: white;
+  border-radius: 6px;
+  padding: 4px 19px;*/
+  color: white;
+}
+
 @media (max-width: 600px) {
-  .intro__2 {
-    font-size: 3rem;
+  .intro__2 .blanco {
+    font-size: 2rem;
   }
-  .breadcrumb{
+  .intro__2 .blanco2{
+    font-size: 1rem
+  }
+  .breadcrumb {
     display: block;
   }
 }
@@ -455,5 +468,9 @@ span.like-icon {
     width: 50%;
   }
 }
-@media (min-width: 992px) {
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    background-color: transparent;
+  }
 }

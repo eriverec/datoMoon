@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="section mt-6">
-      <Breadcrumb/>
+      <Breadcrumb />
 
       <div class="columns is-multiline">
         <div
@@ -20,12 +20,23 @@
               />
               <div class="listing-badge now-open">{{ falda.categ.titulo }}</div>
               <div class="listing-item-content">
-                <div class="numerical-rating mid" data-rating="3"></div>
+                <div
+                  class="tag is-success"
+                  v-if="falda.stock.titulo === 'Disponible'"
+                >
+                  {{ falda.stock.titulo }}
+                </div>
+                <div class="tag is-danger" v-else>
+                  {{ falda.stock.titulo }}
+                </div>
                 <h3>{{ falda.titulo }}</h3>
                 <span>{{ formatDate(falda.publicationDate) }}</span>
+
+                <!-- <span>{{ $dateFns.format(new Date(falda.publicationDate), "EEEE h, y") }}</span>-->
               </div>
-              <span class="like-icon"></span></div
-          ></nuxt-link>
+              <!-- <span class="like-icon"></span>-->
+            </div>
+          </nuxt-link>
         </div>
       </div>
     </section>
@@ -37,6 +48,8 @@ import { request, gql, imageFields, seoMetaTagsFields } from "~/lib/datocms";
 import { toHead } from "vue-datocms";
 import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
+
+import es from "date-fns/locale/es";
 
 const titleCase = require("ap-style-title-case");
 
@@ -84,7 +97,7 @@ export default {
             id
             titulo
             slug
-            publicationDate: _firstPublishedAt
+            publicationDate: _updatedAt
 
             imagen {
               responsiveImage(imgixParams: { fit: crop, w: 860 }) {
@@ -92,6 +105,9 @@ export default {
               }
             }
             categ {
+              titulo
+            }
+            stock {
               titulo
             }
           }
@@ -106,6 +122,9 @@ export default {
   },
   methods: {
     formatDate(date) {
+      //return format(parseISO(date), "PPP");
+      //return format(parseISO(date), "PPP");
+
       return format(parseISO(date), "PPP");
     }
   },

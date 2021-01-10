@@ -52,6 +52,7 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    '@nuxtjs/date-fns',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -59,9 +60,26 @@ export default {
     '@nuxtjs/bulma',
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    
+    '@nuxtjs/markdownit',
     '@nuxtjs/google-analytics',
 
   ],
+
+  dateFns: {
+    locales: ['es'],
+    defaultLocale: 'es',
+    format: 'dd-MM-yyyy',
+    methods: ['format'],
+  },
+
+  markdownit: {
+    injected: true,
+    html: true,
+    quotes: '“”‘’',
+    linkify: true,
+    typographer: true
+  },
 
   googleAnalytics: {
     id: 'UA-185988551-1'
