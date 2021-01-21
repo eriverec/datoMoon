@@ -51,7 +51,7 @@
   transition: background 0.2s ease-in-out;
 
   background-position: 50%;
-  background-size: 200vw 100%;
+  background-size: 100%;
   transition: 0.3s;
 }
 
@@ -80,8 +80,14 @@
   background-position-x: center;
 }
 
+.style_root__3iCRH.bi__imagen {
+  background-image: url("~static/sec-bi.jpeg");
+  background-position: center;
+  filter: grayscale(1);
+}
+
 .style_root__3iCRH.falda__imagen {
-  background-image: url("~static/sec-falda.jpg");
+  background-image: url("~static/fa.jpeg");
 }
 .style_root__3iCRH.overol__imagen {
   background-image: url("~static/sec-ove.jpg");

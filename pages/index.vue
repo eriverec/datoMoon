@@ -19,7 +19,7 @@
         <nuxt-link :to="`/faldas`" class="style_root__3iCRH falda__imagen">
           <div class="style_rootInner__32CX1">
             <div>
-              <div class="style_title__1jQC3"><b>Sección Faldas</b></div>
+              <div class="style_title__1jQC3"><b>Faldas</b></div>
             </div>
             <div class="style_action__32sxL">
               <div class="style_root__2jAzX">
@@ -38,12 +38,31 @@
         <nuxt-link :to="`/`" class="style_root__3iCRH overol__imagen">
           <div class="style_rootInner__32CX1">
             <div>
-              <div class="style_title__1jQC3"><b> Sección Overoles</b></div>
+              <div class="style_title__1jQC3"><b>Overoles</b></div>
             </div>
             <div class="style_action__32sxL">
               <div class="style_root__2jAzX">
                 <div class="button is-info is-light">
-                  No disponible
+                  Muy pronto
+                </div>
+              </div>
+            </div>
+          </div>
+        </nuxt-link>
+      </div>
+    </section>
+
+     <section class="section">
+      <div class="style_wrapper__1BeS5 column is-8 is-offset-2">
+        <nuxt-link :to="`/`" class="style_root__3iCRH bi__imagen">
+          <div class="style_rootInner__32CX1">
+            <div>
+              <div class="style_title__1jQC3"><b>Bisutería</b></div>
+            </div>
+            <div class="style_action__32sxL">
+              <div class="style_root__2jAzX">
+                <div class="button is-info is-light">
+                  Muy pronto
                 </div>
               </div>
             </div>
